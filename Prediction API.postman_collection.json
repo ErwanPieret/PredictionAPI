@@ -1,0 +1,472 @@
+{
+	"info": {
+		"_postman_id": "41b7fd20-cd0f-44a8-b988-8d144d2f626e",
+		"name": "Prediction API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create prediction",
+			"item": [
+				{
+					"name": "Create correct_score 204",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_id\" : 1,\n    \"market_type\" : \"correct_score\",\n    \"prediction\": \"3:2\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions"
+							]
+						},
+						"description": "Create a prediction with correct score : Response 204"
+					},
+					"response": []
+				},
+				{
+					"name": "Create 1x2 1 204",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_id\" : 1,\n    \"market_type\" : \"1x2\",\n    \"prediction\": \"1\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions"
+							]
+						},
+						"description": "Create prediction 1x2 1 : Response 204"
+					},
+					"response": []
+				},
+				{
+					"name": "Create 1x2 X 204",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_id\" : 1,\n    \"market_type\" : \"1x2\",\n    \"prediction\": \"X\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions"
+							]
+						},
+						"description": "Create prediction 1x2 X : Response 204"
+					},
+					"response": []
+				},
+				{
+					"name": "Create 1x2 2 204",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_id\" : 1,\n    \"market_type\" : \"1x2\",\n    \"prediction\": \"2\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions"
+							]
+						},
+						"description": "Create prediction 1x2 2 : Response 204"
+					},
+					"response": []
+				},
+				{
+					"name": "Create missing value 400",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_id\" : 1,\n    \"market_type\" : \"1x2\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions"
+							]
+						},
+						"description": "Create with missing value : Response 400"
+					},
+					"response": []
+				},
+				{
+					"name": "Create incorrect event_id 400",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_id\" : \"e\",\n    \"market_type\" : \"1x2\",\n    \"prediction\": \"2\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions"
+							]
+						},
+						"description": "Create with incorrect event_id : Response 400"
+					},
+					"response": []
+				},
+				{
+					"name": "Create incorrect market_type 400",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_id\" : \"e\",\n    \"market_type\" : \"1x\",\n    \"prediction\": \"2\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions"
+							]
+						},
+						"description": "Create with incorrect market_type : Response 400"
+					},
+					"response": []
+				},
+				{
+					"name": "Create incorrect correct_score 400",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_id\" : 2,\n    \"market_type\" : \"correct_score\",\n    \"prediction\": \"1:e\"\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions"
+							]
+						},
+						"description": "Create with an incorrect form of correct score : Response 400"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List of predictions",
+			"item": [
+				{
+					"name": "List of all predictions 200",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions"
+							]
+						},
+						"description": "Get the list of all predictions"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update prediction",
+			"item": [
+				{
+					"name": "Update win 204",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\" : \"win\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions/1/status",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions",
+								"1",
+								"status"
+							]
+						},
+						"description": "Update with \"win\" : Response 204"
+					},
+					"response": []
+				},
+				{
+					"name": "Update lost 204",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\" : \"lost\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions/1/status",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions",
+								"1",
+								"status"
+							]
+						},
+						"description": "Update with \"lost\" : Response 204"
+					},
+					"response": []
+				},
+				{
+					"name": "Update else 400",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\" : \"else\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions/1/status",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions",
+								"1",
+								"status"
+							]
+						},
+						"description": "Update with \"else\" : Response 400"
+					},
+					"response": []
+				},
+				{
+					"name": "Update no status 400",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions/1/status",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions",
+								"1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update prediction doesn't exist 404",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\" : \"win\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/v1/predictions/100/status",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"predictions",
+								"100",
+								"status"
+							]
+						},
+						"description": "Update prediction not existing : Response 404"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
